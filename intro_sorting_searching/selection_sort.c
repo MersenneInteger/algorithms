@@ -2,20 +2,6 @@
 #include <stdio.h>
 #include "sort.h"
 
-int get_smallest(int list[], int lo, int hi)
-{
-    for(int i = lo+1; i <= hi; i++)
-        if(list[i] < list[lo])
-            lo = i;
-    return lo;
-}
-
-void swap(int list[], int i, int j)
-{
-    int temp = list[i];
-    list[i] = list[j];
-    list[j] =  temp;
-}
 void selection_sort(int list[], int lo, int hi)
 {
     for(int i = lo; i < hi; i++){
