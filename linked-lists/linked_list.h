@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef struct node {
     void *data;
@@ -21,7 +20,7 @@ int remove_next(List *list, node *elem, void **data);
 int list_size(const List *list);
 struct node *head(const List *list);
 struct node *tail(const List *list);
-int is_head(const node *elem);
+int is_head(List *list, const node *elem);
 int is_tail(const node *elem);
 void list_data(const node *elem);
 struct node *list_next(const node *elem);
