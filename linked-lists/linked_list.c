@@ -78,16 +78,6 @@ int list_size(const List *list)
     return list->size;
 }
 
-struct node *head(const List *list)
-{
-    list->head;
-}
-
-struct node *tail(const List *list)
-{
-    list->tail;
-}
-
 int is_head(List *list, const node *elem)
 {
     return elem == list->head? 1: 0;
@@ -96,16 +86,6 @@ int is_head(List *list, const node *elem)
 int is_tail(const node *elem)
 {
     return elem->next == NULL? 1:0;
-}
-
-void list_data(const node *elem)
-{
-    elem->data;
-}
-
-struct node *list_next(const node *elem)
-{
-    elem->next;
 }
 
 int main()
