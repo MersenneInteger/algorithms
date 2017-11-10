@@ -88,7 +88,35 @@ int is_tail(const node *elem)
     return elem->next == NULL? 1:0;
 }
 
+void print_list(List *list, const node *elem)
+{
+    while(elem != NULL) {
+        printf("%p\n", list_data(elem));
+        elem = elem->next;
+    }
+}
+
 int main()
 {
+    List *list;
+    node *elem;
 
+    create_list(list, NULL);
+    elem = list_head(list);
+    insert_next(list, elem, (int*)5);
+    insert_next(list, elem, (int*)3);
+    print_list(list, list_head(list));
+
+    elem = list_head(list);
+    remove_next(list, elem, &list_data(elem));
+    printf("\nRemoving head: \n");
+    print_list(list, list_head(list));
+
+    printf("New list: \n");
+    insert_next(list, elem, (int*)7);
+    insert_next(list, elem, (int*)2);
+    print_list(list, list_head(list));
+
+    printf("\nList head: %p\n", list_head(list)->data);
+    printf("List tail: %p\n", list_tail(list)->data);
 }
