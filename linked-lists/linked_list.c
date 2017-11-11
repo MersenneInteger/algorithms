@@ -119,4 +119,6 @@ int main()
 
     printf("\nList head: %p\n", list_head(list)->data);
     printf("List tail: %p\n", list_tail(list)->data);
+
+    destroy_list(list);
 }
