@@ -1,2 +1,1 @@
-# c-algorithms
-data structures and algorithms library
+data structures and algorithms
