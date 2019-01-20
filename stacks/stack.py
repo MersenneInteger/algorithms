@@ -43,7 +43,15 @@ class Stack(object):
         for e in self._stack:
             if e != None:
                 print(e, end=' ')
+    
+    def get_size(self):
 
+        stack_size = 0
+        for e in self._stack:
+            if e != None:
+                stack_size += 1
+        return stack_size
+'''
 s = Stack()
 s.push(5)
 for i in range(9):
@@ -63,4 +71,4 @@ for i in range(1,9):
     s.push(i)
 print('')
 s.print_stack()
-
+'''
