@@ -8,13 +8,14 @@ class Node(object):
         self._next_node = None
 
 
+
 class SinglyLinkedList(object):
 
     def __init__(self):
         
         self._head = None
         self._tail = None
-
+        self._size = 0
     
     def insert_node_at_head(self, value):
         
@@ -29,6 +30,7 @@ class SinglyLinkedList(object):
             old_head = self._head
             self._head = new_node
             new_node._next_node = old_head
+        self._size += 1
 
     
     def insert_node_at_tail(self, value):
@@ -40,7 +42,7 @@ class SinglyLinkedList(object):
         old_tail._next_node = new_node
         #point new_node to None
         new_node._next_node = None
-
+        self._size += 1
 
     def remove_node_at_head(self):
         
@@ -51,7 +53,7 @@ class SinglyLinkedList(object):
         new_head = self._head._next_node
         self._head._next_node = None
         self._head = new_head
-
+        self._size -= 1
 
     def remove_node_at_tail(self):
         
@@ -66,16 +68,17 @@ class SinglyLinkedList(object):
         #point 2nd to last node's next_node to None, making it the tail
         node._next_node = None
         self._tail = node
+        self._size -= 1
 
 
-    def get_size(self):
-        
-        size = 0
-        node = self._head
-        while node != None:
-            size += 1
-            node = node._next_node
-        return size
+#    def get_size(self):
+#        
+#        size = 0
+#        node = self._head
+#        while node != None:
+#            size += 1
+#            node = node._next_node
+#        return size
 
 
     def print_list(self):
@@ -84,14 +87,6 @@ class SinglyLinkedList(object):
         while node != None:
             print(node._value)
             node = node._next_node
-
-
-    def reverse_list(self):
-        pass
-
-
-    def sort_list(self):
-        pass
 
     
     def search_list(self, target):
@@ -116,14 +111,10 @@ llist.print_list()
 print('removing tail')
 llist.remove_node_at_tail()
 llist.print_list()
-print('size of list: ', llist.get_size())
+print('size of list: ', llist._size)
 print('removing head of list')
 llist.remove_node_at_head()
 llist.print_list()
-
-#reverse list
-
-#sort list
 
 #search list
 find = 1
