@@ -8,7 +8,6 @@ class Node(object):
         self._next_node = None
 
 
-
 class SinglyLinkedList(object):
 
     def __init__(self):
