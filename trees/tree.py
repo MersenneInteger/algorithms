@@ -53,6 +53,36 @@ class BinaryTree(object):
         
         return self._right_child
 
+    ##inorder traversal
+    #recursively do traversal of left subtree, visit root then visit right subtree
+    def inorder_traverse(self):
+
+        if self._left_child:
+            self._left_child.inorder_traverse()
+        print(self._root)
+        if self._right_child:
+            self._right_child.inorder_traverse()
+
+    ##preorder traversal
+    #root -> left -> right
+    def preorder_traverse(self):
+
+        print(self._root)
+        if self._left_child:
+            self._left_child.preorder_traverse()
+        if self._right_child:
+            self._right_child.preorder_traverse()    
+
+    ##postorder traversal
+    #recursively traverse left, then right then root
+    def postorder_traverse(self):
+
+        if self._left_child:
+            self._left_child.postorder_traverse()
+        if self._right_child:
+            self._right_child.postorder_traverse()
+        print(self._root)
+
 
 if __name__ == '__main__':
 
@@ -65,4 +95,17 @@ if __name__ == '__main__':
     right = tree.get_right_child()
     left.insert_right_child(0)
     right.insert_left_child(0)
+
+    print('Inorder traversal')
+    tree.inorder_traverse()
+
+    print('Preorder traversal')
+    tree.preorder_traverse()
+
+    print('Postorder traversal')
+    tree.postorder_traverse()
+
+    print('left and right children')
+    print(tree._left_child._root)
+    print(tree._right_child._root)
 
